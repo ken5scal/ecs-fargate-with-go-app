@@ -16,6 +16,10 @@ import (
 type TestLog struct {
 	Status int `json:"status"`
 	Result string `json:"result"`
+	ErrorResult struct {
+	   ErrorCode int `json:"errorCode"`
+	   Reason string `json:"reason"`
+	} `json:"errorResult"`
 }
 
 func main() {
@@ -56,6 +60,18 @@ func main() {
 		e1 := xerrors.New("error using /x/xerrors package")
 		testLog.Status = http.StatusInternalServerError
 		testLog.Result = e1.Error()
+
+		testLog = TestLog {
+			Status: http.StatusInternalServerError,
+			Result: "",
+			ErrorResult: struct{
+				ErrorCode int  `json:"errorCode"`
+				Reason string   `json:"reason"`
+			}{
+				ErrorCode: http.StatusInternalServerError,
+				Reason: e1.Error(),
+			},
+		}
 
 		res, _ := json.Marshal(testLog)
 
