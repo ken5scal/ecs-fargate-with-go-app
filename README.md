@@ -1,0 +1,1 @@
+![test](https://github.com/ken5scal/ecs-fargate-with-go-app/workflows/test/badge.svg)
