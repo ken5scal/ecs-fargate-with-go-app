@@ -15,7 +15,7 @@ jobs:
       - name: Build and push Docker images
         uses: docker/build-push-action@v1.1.0
         with:
-          repository: ken5scal/ecs-fargate-with-go-app
+          repository: ken5scal/ecs-fargate-with-go-app/hoge
           username: ${{ github.actor }}
           password: ${{ secrets.APP_A_GITHUB_CI_CD_TOKEN }}
           registry: docker.pkg.github.com
