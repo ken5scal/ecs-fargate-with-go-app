@@ -17,7 +17,7 @@ jobs:
         with:
           repository: ken5scal/ecs-fargate-with-go-app
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.APP_A_GITHUB_CI_CD_TOKEN }}
           registry: docker.pkg.github.com
           tag_with_ref: true
           tag_with_sha: true
