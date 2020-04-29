@@ -15,10 +15,7 @@ jobs:
       - name: Build and push Docker images
         uses: docker/build-push-action@v1.1.0
         with:
-          repository:
-          username:
+          repository: ken5scal/ecs-fargate-with-go-app
           registry: docker.pkg.github.com
           tag_with_ref: true
           tag_with_sha: true
-          path: /
-          dockerfile: Dockerfile
